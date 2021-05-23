@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+class time
+{
+private:
+    int hour,minute;
+public:
+    void getdata()
+    {
+    cout<<" ***** Enter the time ***** "<<endl;
+    cout<<" Enter hours = ";
+    cin>>hour;
+    cout<<" Enter minute = ";
+    cin>>minute;
+    cout<<endl;
+    };
+
+
+    void Friend(time t1,time t2)
+    {
+
+        minute = t1.minute + t2.minute;
+        hour = t1.hour + t2.hour + minute/60;
+        minute %=60;
+
+    };
+
+
+    void display_time(time t1,time t2)
+    {
+             cout<<"your time 1 is: "<<t1.hour<<":"<<t1.minute<<endl;
+             cout<<"your time 2 is: "<<t2.hour<<":"<<t2.minute<<endl<<endl;
+             cout<<"  ** Addition of time ** "<<endl;
+             cout<<"After adding both  the time is "<<hour<<":"<<minute<<endl;
+    };
+
+
+
+};
+int main()
+{
+    time t1,t2,t3;
+     t1.getdata();
+     t2.getdata();
+     t3.Friend(t1,t2);
+     t3.display_time(t1,t2);
+    return 0;
+}
